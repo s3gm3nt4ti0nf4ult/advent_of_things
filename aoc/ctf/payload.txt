@@ -1,0 +1,14 @@
+POST / HTTP/1.1
+Host: 06.adventofctf.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: pl,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Origin: https://06.adventofctf.com
+Connection: close
+Referer: https://06.adventofctf.com/
+Upgrade-Insecure-Requests: 1
+
+search=FLAG
