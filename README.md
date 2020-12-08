@@ -8,7 +8,7 @@ Advent of Code (poor solutions), Advent of Cyber2, Advent of CTF
  - [x] day4
  - [x] day5
  - [x] day6
- - [x] day7 - part I
+ - [x] day7 - part I/part II done
  - [x] day8 
 
 ## AOCtf
