@@ -5,10 +5,10 @@ Advent of Code (poor solutions), Advent of Cyber2, Advent of CTF
  - [x] day1
  - [x] day2
  - [ ] day3
- - [ ] day4
- - [ ] day5
+ - [x] day4
+ - [x] day5
  - [x] day6
- - [ ] day7
+ - [ ] day7 - part I
  - [x] day8 
 
 ## AOCtf

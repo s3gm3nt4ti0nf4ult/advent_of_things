@@ -3,18 +3,18 @@
 
 bags_relations = open('./input.txt').read().split('\n')
 
-SEARCH = "shiny gold"
+SEARCH = "shiny gold bag"
 
+to_visit = set()
 visited = set()
-
 tracks = {}
-bg_colors = 0
+bg_colors = set()
 
 for br in bags_relations:
-    entry_bag = br.split('contain')[0].strip()
+    entry_bag = br.split('contain')[0].strip().replace('bags', 'bag')
     inserts = br.split('contain')[1]
-    insert_bag = [None] if 'no other bags' in inserts else [
-        x.strip() for x in inserts.replace('.', '').split(',')]
+    insert_bag = [''] if 'no other bags' in inserts else [
+        x.strip().replace('bags', 'bag') for x in inserts.replace('.', '').split(',')]
 
     if entry_bag in tracks.keys():
         print(f"{entry_bag} already in tracks!")
@@ -24,9 +24,22 @@ for br in bags_relations:
         tracks[entry_bag] = insert_bag
 
 for k, v in tracks.items():
-    print(f"{k}: {v}")
-    if filter(lambda x: 1 if SERACH in x else 0, v):
-        bg_colors += 1
+    # print(f"{k}: {v}")
+    # if filter(lambda x: True if SEARCH in x else False, v):
+    if any(SEARCH in sub for sub in v):
+        bg_colors.add(k)
+        if k != '':
+            to_visit.add(k)
 
-print(f"Directly: {bg_colors}")
-# rzeczy
+while len(to_visit):
+    bag = to_visit.pop()
+    for k, v in tracks.items():
+        if any(bag in sub for sub in v):
+            if k not in visited:
+                bg_colors.add(k)
+                to_visit.add(k)
+
+    visited.add(bag)
+
+print(f"First: {len(bg_colors)}")
+print(f"Second: ")
