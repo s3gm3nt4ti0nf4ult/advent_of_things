@@ -4,7 +4,7 @@ Advent of Code (poor solutions), Advent of Cyber2, Advent of CTF
 ## AOCode
  - [x] day1
  - [x] day2
- - [ ] day3
+ - [x] day3
  - [x] day4
  - [x] day5
  - [x] day6
