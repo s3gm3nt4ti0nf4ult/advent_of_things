@@ -2,8 +2,6 @@
 from math import prod
 
 mapa = open('./input.txt').read().split('\n')
-print(len(mapa[0]))
-
 
 def slope(r, d):
     x, y = 0, 0

@@ -15,7 +15,6 @@ for br in bags_relations:
     inserts = br.split('contain')[1]
     insert_bag = [''] if 'no other bags' in inserts else [
         x.strip().replace('bags', 'bag') for x in inserts.replace('.', '').split(',')]
-
     if entry_bag in tracks.keys():
         print(f"{entry_bag} already in tracks!")
         tracks[entry_bag] += insert_bag
@@ -24,8 +23,6 @@ for br in bags_relations:
         tracks[entry_bag] = insert_bag
 
 for k, v in tracks.items():
-    # print(f"{k}: {v}")
-    # if filter(lambda x: True if SEARCH in x else False, v):
     if any(SEARCH in sub for sub in v):
         bg_colors.add(k)
         if k != '':
@@ -41,5 +38,14 @@ while len(to_visit):
 
     visited.add(bag)
 
+
+def count(s, m):
+    if m[s] == ['']:
+        return 1
+
+    else:
+        return sum(map(lambda x: int(x.split(' ', 1)[0]) * count(x.split(' ', 1)[1], m), m[s])) + 1
+
+
 print(f"First: {len(bg_colors)}")
-print(f"Second: ")
+print(f"Second: {count(SEARCH, tracks) - 1}")
