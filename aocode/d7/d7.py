@@ -25,7 +25,8 @@ for br in bags_relations:
 
 for k, v in tracks.items():
     print(f"{k}: {v}")
-    if filter(lambda x: 1 if SERACH in x else 0, v)
+    if filter(lambda x: 1 if SERACH in x else 0, v):
         bg_colors += 1
 
 print(f"Directly: {bg_colors}")
+# rzeczy
