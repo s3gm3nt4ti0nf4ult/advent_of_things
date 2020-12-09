@@ -2,13 +2,12 @@
 from copy import deepcopy
 
 
-def code_runner(mem, backtrack=False):
+def code_runner(mem):
     PC = 0
     acc = 0
     visited = []
     changed = False
     while True:
-        # print(f"PC {PC}\t\tOP:{mem[PC]}")
         if PC >= len(mem):
             print(f"Out of memory bound: {PC}. Bootloader successfully loaded")
             raise IndexError(acc)
@@ -44,8 +43,8 @@ def code_runner(mem, backtrack=False):
 
 
 if __name__ == '__main__':
-    prog = [x.split(' ') for x in open('./input.txt').read().split('\n')]
-    print(f"First: {code_runner(prog)[0]}")
+    prog = [x.split(' ') for x in open('./input3.txt').read().split('\n')]
+    print(f"First: {code_runner(prog)[1]}")
     for i in range(len(prog)):
         tmp_prog = deepcopy(prog)
         if tmp_prog[i][0] == 'nop':
