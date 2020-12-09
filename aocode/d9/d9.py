@@ -24,5 +24,5 @@ while j < len(nums) - 1:
         j += 1
 
     else:
-        print(f"Second: {sorted(nums[i:j+1])[0] + sorted(nums[i:j+1])[-1]}")
+        print(f"Second: {min(nums[i:j+1]) + max(nums[i:j+1])}")
         break
