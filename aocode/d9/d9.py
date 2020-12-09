@@ -2,7 +2,7 @@
 from itertools import combinations
 
 
-nums = [int(x) for x in open('./input.txt').read().split('\n')]
+nums = [int(x) for x in open('./input3.txt').readlines() if x]
 candaidates = nums[:]
 for l, u in zip(range(0, len(nums) - 26), range(25, len(nums) - 1)):
     for i in combinations(nums[l:u + 1], 2):
